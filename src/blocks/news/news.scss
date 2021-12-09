@@ -1,0 +1,74 @@
+@use 'sass:math';
+@use '../social/social';
+
+.news {
+  padding-top: 81px;
+  padding-bottom: 90px;
+  background-color: #ffffff;
+
+  &__columns {
+    display: flex;
+    column-gap: 30px;
+  }
+
+  &__column {
+    &_start {
+      width: math.div(70px * 5 + 30px * (4 + 1), 70px * 12 + 30px * 11) * 100%;
+      padding-top: 140px;
+    }
+
+    &_end {
+      width: math.div(70px * 7 + 30px * (6 - 1), 70px * 12 + 30px * 11) * 100%;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: math.div(43px, 32px);
+    color: #1b1a17;
+  }
+
+  &__description {
+    width: math.div(70px * 4 + 30px * 4, 70px * 5 + 30px * 5) * 100%;
+    margin-top: 0;
+    margin-bottom: 112px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: math.div(27px, 16px);
+    color: #444240;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__images {
+    display: grid;
+    grid-template-areas:
+      'area-1 area-3'
+      'area-2 area-3';
+    row-gap: 10px;
+    column-gap: 10px;
+    padding-left: 11px;
+    margin-left: auto;
+  }
+
+  &__image {
+    @each $number in (1, 2, 3) {
+      &:nth-child(#{$number}) {
+        grid-area: area-#{$number};
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+}

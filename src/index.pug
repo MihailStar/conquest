@@ -1,0 +1,21 @@
+extends ./templates/main.pug
+
+block variables
+  -
+    const pageTitle = 'Главная | Conquest - Магазин швейцарских часов';
+
+block head
+  link(href="https://fonts.googleapis.com", rel="preconnect")
+  link(href="https://fonts.gstatic.com", rel="preconnect", crossorigin)
+  link(
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Prata&family=Roboto:wght@400;500;700&display=swap",
+    rel="stylesheet"
+  )
+block body
+  +header
+  main.main
+    +hero
+    +popular
+    +slider
+    +news
+  +footer

@@ -1,0 +1,31 @@
+mixin popular
+  -
+    const popular = [
+      { title: 'RADO', price: 65300, src: './images/content/popular-1.png' },
+      { title: 'BVLGARI', price: 81700, src: './images/content/popular-2.png' },
+      { title: 'BVLGARI', price: 72700, src: './images/content/popular-3.png' },
+    ];
+
+  section.popular
+    .wrapper
+      h2.popular__title Популярные модели
+      a.popular__link(href="javascript:void(0);") Смотреть все
+      .popular__columns
+        each item in popular
+          .popular__column
+            .popular__watch
+              article.popular-watch
+                h3.popular-watch__title= item.title
+                em.popular-watch__price
+                  span= item.price.toLocaleString('ru')
+                  span ₽
+                .popular-watch__image
+                  img(
+                    src=item.src,
+                    alt=`Популярные модели. Часы ${item.title}`,
+                    width="311",
+                    height="311"
+                  )
+                a.popular-watch__link(
+                  href=item.href === undefined ? 'javascript:void(0);' : item.href
+                ) Подробнее

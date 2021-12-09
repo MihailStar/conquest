@@ -1,0 +1,128 @@
+@use 'sass:math';
+@use '../button/button';
+
+.slider {
+  position: relative;
+  padding-top: 52px;
+  padding-bottom: 53px;
+  background-color: #fdfdfb;
+  background-image: url('../images/slider-1.svg'), url('../images/slider-2.svg');
+  background-repeat: no-repeat;
+  background-position: top -149px right -151px, top 12px right -523px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34.2%;
+    height: 100%;
+    content: '';
+    background-color: #f7f5ef;
+  }
+
+  &__navigation {
+    position: absolute;
+    bottom: -12px + -30px;
+    left: 0;
+    width: 100%;
+    padding-right: math.div(
+        70px * 7 + 30px * (6 - 1) + 15px,
+        15px + 70px * 12 + 30px * 11 + 15px
+      ) * 100%;
+    padding-left: math.div(
+        15px + 70px * 5 + 30px * (4 - 1),
+        15px + 70px * 12 + 30px * 11 + 15px
+      ) * 100%;
+  }
+}
+
+.slider-slide {
+  &__columns {
+    display: flex;
+    column-gap: 30px;
+  }
+
+  &__column {
+    &_start {
+      width: math.div(70px * 7 + 30px * (6 - 1), 70px * 12 + 30px * 11) * 100%;
+    }
+
+    &_end {
+      width: math.div(70px * 5 + 30px * (4 + 1), 70px * 12 + 30px * 11) * 100%;
+      padding-top: 88px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: math.div(43px, 32px);
+    color: #1b1a17;
+  }
+
+  &__description {
+    width: math.div(70px * 4 + 30px * 4, 70px * 5 + 30px * 5) * 100%;
+    margin-top: 0;
+    margin-bottom: 38px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: math.div(24px, 16px);
+    color: #444240;
+  }
+}
+
+.slider-navigation {
+  display: flex;
+  flex-shrink: 0;
+
+  &__button {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding-top: 1px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: math.div(16px, 16px);
+    color: rgba(#1b1a17, 0.5);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+
+  &__number {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+    font-family: 'Prata', serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: math.div(16px, 12px);
+    color: rgba(#1b1a17, 0.82);
+  }
+}

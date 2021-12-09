@@ -1,0 +1,58 @@
+mixin footer
+  -
+    const contacts = [
+      { title: '8 (499) 450-47-97', href: 'tel:+74994504797' },
+      { title: 'info@conquest.watch.ru', href: 'mailto:info@conquest.watch.ru' },
+    ];
+
+    const lists = [
+      {
+        title: 'О компании',
+        list: [
+          { title: 'Наши магазины' },
+          { title: 'Вакансии' },
+          { title: 'Сертификаты' },
+          { title: 'Отзывы' },
+        ],
+      },
+      {
+        title: 'Покупателям',
+        list: [
+          { title: 'Каталог товаров' },
+          { title: 'Как заказать?' },
+          { title: 'FAQ' },
+          { title: 'Корпоративным клиентам' },
+        ],
+      },
+      {
+        title: 'Оплата и доставка',
+        list: [
+          { title: 'Способы оплаты' },
+          { title: 'Время доставки' },
+          { title: 'Гарантии и ремонт' },
+          { title: 'Возврат и компенсация' },
+        ],
+      },
+    ];
+
+  footer.footer
+    .wrapper
+      .footer__columns
+        .footer__column
+          a.footer__logo
+            h2.visually-hidden Conquest
+          .footer__contacts
+            ul.footer-list
+              each contact in contacts
+                li.footer-list__item
+                  a.footer-list__link(href=contact.href)= contact.title
+        each list in lists
+          .footer__column
+            h3.footer__title= list.title
+            .footer__list
+              ul.footer-list
+                each item in list.list
+                  li.footer-list__item
+                    a.footer-list__link(
+                      href=item.href === undefined ? 'javascript:void(0);' : item.href
+                    )= item.title

@@ -1,0 +1,38 @@
+include ../button/button.pug
+
+mixin slider
+  .slider
+    .wrapper
+      .slider__slides
+        .slider__slide
+          section.slider-slide
+            .slider-slide__columns
+              .slider-slide__column.slider-slide__column_start
+                .slider-slide__image
+                  img(
+                    src="./images/content/slider-1.jpg",
+                    alt="Подлинное качество",
+                    width="521",
+                    height="414"
+                  )
+              .slider-slide__column.slider-slide__column_end
+                h2.slider-slide__title Подлинное качество
+                p.slider-slide__description Все часы производятся в&nbsp;Швейцарии и&nbsp;имеют сертификаты качества. Настоящие швейцарские часы&nbsp;&mdash; это предмет гордости и&nbsp;престижа
+                .slider-slide__link
+                  +button('Смотреть каталог').button_theme_light(
+                    href="javascript:void(0);"
+                  )
+      .slider__navigation
+        .slider-navigation
+          button.slider-navigation__button.slider-navigation__button_prev(
+            type="button"
+          )
+            span.visually-hidden Предыдущий слайд
+            span(aria-hidden="true") &lt;
+          .slider-navigation__number
+            span 01
+          button.slider-navigation__button.slider-navigation__button_next(
+            type="button"
+          )
+            span.visually-hidden Следующий слайд
+            span(aria-hidden="true") &gt;

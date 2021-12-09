@@ -1,0 +1,27 @@
+include ../button/button.pug
+
+mixin hero
+  .hero
+    .wrapper
+      .hero__columns
+        .hero__column.hero__column_start
+          h2.hero__title Весна/Лето 2019
+          strong.hero__subtitle Коллекция
+          p.hero__discription Швейцарские часы в&nbsp;наличии в&nbsp;Москве и&nbsp;с&nbsp;доставкой по&nbsp;всему миру
+          .hero__link
+            +button('Смотреть каталог').button_theme_dark(
+              href="javascript:void(0);"
+            )
+        .hero__column.hero__column_end
+          .hero__image
+            img(
+              src="./images/content/hero-1.png",
+              alt="Коллекция Весна/Лето 2019. Часы RADO",
+              width="402",
+              height="752"
+            )
+            em.hero__price
+              span= (22000).toLocaleString('ru')
+              span ₽
+            em.hero__diameter
+              span 28 мм диаметр

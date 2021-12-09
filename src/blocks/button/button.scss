@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+.button {
+  display: inline-block;
+  min-width: 205px;
+  padding-top: 26px;
+  padding-right: 38px;
+  padding-bottom: 26px;
+  padding-left: 38px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: math.div(14px, 12px);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #000000;
+  border: 0;
+
+  &_theme_dark {
+    background-color: #444240;
+  }
+
+  &_theme_light {
+    background-color: #d4b098;
+  }
+}
